@@ -96,16 +96,7 @@
     return controller;
 }
 
-#pragma mark - MengQi_iPhone_TabViewClickDelegte
-- (void)tabViewClick:(UIButton *)button index:(NSInteger)index
-{
-    if (index < 0 || index > [self.dataSource numberControllerInSlideView:nil] - 1) {
-        return;
-    }
-    [self showControllerAtIndex:index];
-}
-
-#pragma mark - MengQi_iPhone_TabViewDataSource
+#pragma mark - MLSLideTabViewDataSource
 - (UIViewController *)tabControllerAtIndex:(NSInteger)index
 {
     return [self controllerAtIndex:index];

@@ -243,4 +243,13 @@ NSInteger const defaultButtonIndex = 0;
     _slideView.slideDelegate = self;
 }
 
+- (void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+    _collectionView.frame = CGRectMake(0, 0, CGRectGetWidth(frame), CGRectGetHeight(frame));
+    CGRect bottomLineFrame = _bottomLineView.frame;
+    bottomLineFrame.origin.y = frame.size.height - 5.0;
+    _bottomLineView.frame = bottomLineFrame;
+}
+
 @end

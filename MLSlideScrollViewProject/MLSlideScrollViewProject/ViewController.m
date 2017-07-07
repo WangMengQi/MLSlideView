@@ -26,6 +26,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.edgesForExtendedLayout = UIRectEdgeNone;
     _titles = @[@"热门", @"科技", @"本地", @"娱乐", @"搞笑", @"车", @"聊天"];
+    self.tabView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 40.0);
     self.tabView.normalTextColor = [UIColor colorWithRed:249.0/255.0 green:149.0/255.0 blue:146.0/255.0 alpha:1.0];//RGBCOLOR(249, 149, 146);
     self.tabView.selectedTextColor = [UIColor whiteColor];
     self.tabView.slideView = self.slideView;
@@ -62,7 +63,7 @@
 - (MLSlideTabView *)tabView
 {
     if (!_tabView) {
-        _tabView = [[MLSlideTabView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 40.0)];
+        _tabView = [[MLSlideTabView alloc]init];
         _tabView.backGroundColor = [UIColor redColor];
         _tabView.dataSource = self;
         _tabView.delegate = self;
